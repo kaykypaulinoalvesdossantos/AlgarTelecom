@@ -8,7 +8,6 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 export default function Planos(){
 
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [isActive, setIsActive] = useState(false);
     const [isResidencial, setIsResidencial] = useState(true);
 
     const [wifiActive, setWifiActive] = useState<{ [key: number]: boolean }>({});
@@ -33,14 +32,6 @@ export default function Planos(){
             [index]: !prevState[index], // Ativa/desativa somente o botão daquele plano
         }));
     };
-    const [isVisible, setIsVisible] = useState(true);
-    const handleClick = () => {
-        setIsVisible(false);
-        setTimeout(() => {
-          setIsResidencial(!isResidencial);
-          setIsVisible(true);
-        }, 300);
-      };
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const promocao = [
