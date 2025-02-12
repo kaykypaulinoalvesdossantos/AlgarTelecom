@@ -8,7 +8,6 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 export default function Planos(){
 
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [isResidencial, setIsResidencial] = useState(true);
 
     const [wifiActive, setWifiActive] = useState<{ [key: number]: boolean }>({});
     
@@ -84,7 +83,7 @@ export default function Planos(){
         <div className="flex flex-col items-center justify-between text-[#002D16] gap-12 bg-[#34393F]">
             <h1 className=" text-4xl font-bold text-white pt-[130px]">CONHEÇA TODAS AS NOSSAS OFERTAS!</h1>   
 
-            <div className={`w-full flex items-center px-8 ${isResidencial ? "block" : "hidden"}`}>
+            <div className={`w-full flex items-center px-8 `}>
                 {/* Botão Esquerda */}
                 <button 
                     onClick={prevPlan} 
