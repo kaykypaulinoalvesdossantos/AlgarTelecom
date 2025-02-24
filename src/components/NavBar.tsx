@@ -21,7 +21,7 @@ export default function NavBar() {
   ]
 
   return (
-    <nav className="max-w-screen shadow-nabBarShadow">
+    <nav className="max-w-full shadow-nabBarShadow">
       <div className="items-center justify-between bg-[#FBF8F5] px-7 py-4 md:flex md:px-10">
         <Link
           href={'/'}
