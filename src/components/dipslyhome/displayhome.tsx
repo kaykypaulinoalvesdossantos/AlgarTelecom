@@ -29,7 +29,7 @@ export default function Displayhome(){
           }}
           modules={[Autoplay, Pagination]}
         >
-          {apressetation.map((IMG, Index) => (
+          {apressetation.map((IMG) => (
             <SwiperSlide
               key={IMG.id}
               className="!z-0 !max-w-full !h-[695px] object-cover text-white max-lg:!h-[495px] max-md:!h-[300px] max-sm:!h-screen"

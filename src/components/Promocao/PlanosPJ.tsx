@@ -1,17 +1,49 @@
 "use client"
 import Image from "next/image";
 import Link from "next/link"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import check from '@/../public/icons/CheckCircleFill.svg'
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-export default function Planos(){
+export default function PlanosPj(){
 
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [isResidencial] = useState(true);
 
     const [wifiActive, setWifiActive] = useState<{ [key: number]: boolean }>({});
+
+    const [planosPorPagina, setPlanosPorPagina] = useState(3);
+
+    // Responsividade
+    useEffect(() => {
+        const handleResize = () => {
+            if (isResidencial) {
+                if (window.innerWidth < 640) {
+                    setPlanosPorPagina(1);
+                } else if (window.innerWidth < 1024) {
+                    setPlanosPorPagina(2);
+                } else {
+                    setPlanosPorPagina(3);
+                }
+            } else {
+                if (window.innerWidth < 640) {
+                    setPlanosPorPagina(1);
+                } else if (window.innerWidth < 1024) {
+                    setPlanosPorPagina(2);
+                } else {
+                    setPlanosPorPagina(3); // Ou ajuste conforme necessário para o plano móvel
+                }
+            }
+        };
     
-    const planosPorPagina = 3;
+        handleResize();
+        window.addEventListener("resize", handleResize);
+    
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, [isResidencial]);
+    
 
     const nextPlan = () => {
         if (currentIndex + planosPorPagina < promocao.length) {
@@ -28,80 +60,155 @@ export default function Planos(){
     const toggleWifi = (index: number) => {
         setWifiActive((prevState) => ({
             ...prevState,
-            [index]: !prevState[index], // Ativa/desativa somente o botão daquele plano
+            [index]: !prevState[index],
         }));
     };
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const promocao = [
         {
+            plano : '30 Mega',
+            valor24 : '570,00',
+            valor36: '470,00',
+        },
+        {
+            plano : '50 Mega',
+            valor24 : '770,00',
+            valor36: '670,00',
+        },
+        {
+            plano : '100 Mega',
+            valor24 : '1.070,00',
+            valor36: '870,00',
+        },
+        {
+            plano : '200 Mega',
+            valor24 : '1.370,00',
+            valor36: '1.170,00',
+        },
+        {
             plano : '300 Mega',
-            valor : '89,90',
-            valorsuper : '129,80',
-            up: '150 Megas',
+            valor24 : '1.770,00',
+            valor36: '1.470,00',
         },
         {
-            plano : '400 Mega',
-            valor : '99,90',
-            valorsuper : '139,80',
-            up: '200 Megas',
+            plano : '30 Mega',
+            valor24 : '770,00',
+            valor36: '670,00',
+            canais: '10 Canais'
         },
         {
-            plano : '500 Mega',
-            valor : '109,90',
-            valorsuper : '149,80',
-            up: '250 Megas',
+            plano : '50 Mega',
+            valor24 : '870,00',
+            valor36: '770,00',
+            canais: '10 Canais'
         },
         {
-            plano : '600 Mega',
-            valor : '119,90',
-            valorsuper : '159,80',
-            up: '300 Megas',
+            plano : '100 Mega',
+            valor24 : '1.070,00',
+            valor36: '870,00',
+            canais: '10 Canais'
         },
         {
-            plano : '700 Mega',
-            valor : '129,90',
-            valorsuper : '169,80',
-            up: '350 Megas',
+            plano : '200 Mega',
+            valor24 : '1.470,00',
+            valor36: '1.270,00',
+            canais: '10 Canais'
         },
         {
-            plano : '800 Mega',
-            valor : '139,90',
-            valorsuper : '179,80',
-            up: '400 Megas',
+            plano : '300 Mega',
+            valor24 : '1.670,00',
+            valor36: '1.370,00',
+            canais: '10 Canais'
         },
         {
-            plano : '1 Gigas',
-            valor : '229,90',
-            valorsuper : '269,80',
-            up: '500 Megas',
+            plano : '30 Mega',
+            valor24 : '870,00',
+            valor36: '770,00',
+            canais: '20 Canais'
         },
-
-    ]
+        {
+            plano : '50 Mega',
+            valor24 : '1.070,00',
+            valor36: '870,00',
+            canais: '20 Canais'
+        },
+        {
+            plano : '100 Mega',
+            valor24 : '1.170,00',
+            valor36: '970,00',
+            canais: '20 Canais'
+        },
+        {
+            plano : '200 Mega',
+            valor24 : '1.670,00',
+            valor36: '1.370,00',
+            canais: '20 Canais'
+        },
+        {
+            plano : '300 Mega',
+            valor24 : '1.870,00',
+            valor36: '1.570,00',
+            canais: '20 Canais'
+        },
+        {
+            plano : '30 Mega',
+            valor24 : '1.770,00',
+            valor36: '970,00',
+            canais: '30 Canais'
+        },
+        {
+            plano : '50 Mega',
+            valor24 : '1.170,00',
+            valor36: '970,00',
+            canais: '30 Canais'
+        },
+        {
+            plano : '100 Mega',
+            valor24 : '1.270,00',
+            valor36: '1.070,00',
+            canais: '20 Canais'
+        },
+        {
+            plano : '200 Mega',
+            valor24 : '1.770,00',
+            valor36: '1.470,00',
+            canais: '30 Canais'
+        },
+        {
+            plano : '300 Mega',
+            valor24 : '2.070,00',
+            valor36: '1.770,00',
+            canais: '30 Canais'
+        },
+    ];
 
     return(
-        <div className="flex flex-col items-center justify-between text-[#002D16] gap-12 bg-[#34393F]">
-            <h1 className=" text-4xl font-bold text-white pt-[130px]">CONHEÇA TODAS AS NOSSAS OFERTAS!</h1>   
+        <div className="flex flex-col items-center justify-between text-[#002D16] gap-12 w-full bg-[#34393F]">
+            <h1 className="text-4xl font-bold text-center max-md:text-3xl max-sm:text-2xl text-white pt-[130px]">CONHEÇA NOSSOS PLANOS PARA SUA EMPRESA!</h1>
 
-            <div className={`w-full flex items-center px-8 `}>
-                {/* Botão Esquerda */}
-                <button 
-                    onClick={prevPlan} 
-                    className="left-5 z-10 bg-[#35C752] p-3 rounded-xl shadow-md hover:bg-[#228335] transition hidden md:flex"
-                >
-                    <ChevronLeft size={40} />
-                </button>
+            <div className={`w-full flex items-center px-8 ${isResidencial ? "block" : "hidden"}`}>
+            <button 
+    onClick={prevPlan} 
+    className={`left-5 z-10 bg-[#00AEEF] p-3 rounded-xl shadow-md hover:bg-[#038ABC] transition md:flex ${
+        currentIndex > 0 && planosPorPagina < 3 ? 'block' : 'hidden'
+    }`}
+>
+    <ChevronLeft size={40} />
+</button>
 
-                {/* Contêiner dos planos */}
-                <div className="flex w-full  gap-24 items-center justify-center">
+                <div className="flex w-full gap-6 items-center justify-center">
                     {promocao.slice(currentIndex, currentIndex + planosPorPagina).map((plano, index) => (
-                        <div key={index} className="bg-white px-7 rounded-3xl flex flex-col gap-7 shadow-[0px_0px_20px_1px_rgba(0,0,0,0.75)]">
-                        <h2 className="text-7xl font-bold text-[#178000] mt-14">{plano.plano}</h2>
-                        <div className="flex flex-col gap-5">
+                        <div key={index} 
+                            className="bg-white p-7 rounded-3xl flex flex-col gap-7 shadow-md 
+                            transition-all duration-300 flex-grow max-w-[350px] w-full"
+                        >
+                            <h2 className="text-4xl font-bold text-[#178000] mt-6">{plano.plano}</h2>
+                            <p className="text-[#002D16] text-xl font-bold ">{plano.canais}</p>
+                            <div className="flex flex-col gap-2">
                             <div>
                                 <p className="text-[#002D16] text-xl font-bold ">Por apenas</p>
-                                <p className={`text-[#002D16] text-4xl font-bold ${wifiActive[index] ? "hidden" : "block"}`}>R${plano.valor}<span className="text-2xl">/mês</span></p>
-                                <p className={`text-[#002D16] text-4xl font-bold ${wifiActive[index] ? "block" : "hidden"}`}>R${plano.valorsuper}<span className="text-2xl">/mês</span></p>
+                                <p className={`text-[#002D16] text-4xl font-bold ${wifiActive[index] ? "hidden" : "block"}`}>R${plano.valor24}<span className="text-2xl">/mês</span></p>
+                                <p className={`text-[#002D16] text-4xl font-bold ${wifiActive[index] ? "block" : "hidden"}`}>R${plano.valor36}<span className="text-2xl">/mês</span></p>
                             </div>
                             <div className="flex flex-row items-center gap-4">
                                 <button
@@ -116,24 +223,19 @@ export default function Planos(){
                                     }`}
                                 />
                             </button>
-                                <p className="font-bold text-xl">Super Wi-fi</p>
+                            <p className={`text-[#002D16] text-xl font-bold ${wifiActive[index] ? "hidden" : "block"}`}>24 Meses</p>
+                            <p className={`text-[#002D16] text-xl font-bold ${wifiActive[index] ? "block" : "hidden"}`}>36 Meses</p>
                             </div>
-                        </div>
+                            </div>
                         <span className="min-h-[2px] bg-[#002D16] min-w-full block"></span>
-                        <div className="flex flex-col gap-5">
-                            <p className="text-[#002D16] text-xl">Serviços inclusos :</p>
+
                             <ul className="text-[#002D16] text-base flex flex-col gap-3">
-                                <li className={`flex items-center gap-2 
-                                        ${wifiActive[index] ? "block" : "hidden"}
-                                `}><Image src={check} alt={""}/>Super Roteador Wi-FI 6</li>
-                                <li className="flex items-center gap-2"><Image src={check} alt={""}/>Instalação gratuita</li>
                                 <li className="flex items-center gap-2"><Image src={check} alt={""}/>Wi-Fi Grátis</li>
-                                <li className="flex items-center gap-2"><Image src={check} alt={""}/>Linha Fixa</li>
-                                <li className="flex items-center gap-2"><Image src={check} alt={""}/>Internet 100% Fibra ótica </li>
-                                <li className="flex items-center gap-2"><Image src={check} alt={""}/>Até {plano.plano} de Download</li>
-                                <li className="flex items-center gap-2"><Image src={check} alt={""}/>Até {plano.up} de Upload</li>
+                                <li className="flex items-center gap-2"><Image src={check} alt={""}/>Upload 100% </li>
+                                <li className="flex items-center gap-2"><Image src={check} alt={""}/>Download</li>
+                                <li className="flex items-center gap-2"><Image src={check} alt={""}/>IP Exclusivo</li>
+                                <li className="flex items-center gap-2"><Image src={check} alt={""}/>Suporte em 4 Horas</li>
                             </ul>
-                        </div>
                             <Link
                                 href="#"
                                 className="text-3xl mb-8 h-[56px] min-w-[200px] flex items-center justify-center border-2 border-[#34F80F] rounded-full text-center bg-white text-[#002D16] hover:bg-[#34F80F] hover:text-white hover:font-bold transition-all duration-300">
@@ -143,27 +245,44 @@ export default function Planos(){
                     ))}
                 </div>
 
-                {/* Botão Direita */}
                 <button 
-                    onClick={nextPlan} 
-                    className=" left-5 z-10 bg-[#35C752] p-3 rounded-xl shadow-md hover:bg-[#228335] transition hidden md:flex">
-                    <ChevronRight size={40} />
-                </button>
+    onClick={nextPlan} 
+    className={`right-5 z-10 bg-[#00AEEF] p-3 rounded-xl shadow-md hover:bg-[#038ABC] transition md:flex ${
+        currentIndex + planosPorPagina < promocao.length && planosPorPagina < 3 ? 'block' : 'hidden'
+    }`}
+>
+    <ChevronRight size={40} />
+</button>
+
             </div>
-            
-            <div className="flex gap-9 items-center">
-            <Link
-                href="#"
-                className="text-3xl mb-8 h-[56px] min-w-[200px] flex items-center justify-center border-2 border-[#00AEEF] bg-[#00AEEF] rounded-full text-cente text-white px-5 hover:bg-[#34393F] font-bold transition-all duration-300">
-                Contratar Link Dedicado
-            </Link>
-            <Link
-                 href="#"
-                className="text-3xl mb-8 h-[56px] min-w-[200px] flex items-center justify-center border-2  border-[#34F80F] bg-[#34F80F] rounded-full text-center text-white px-5 hover:bg-[#34393F]  font-bold transition-all duration-300">
-                Personalizar Plano
-            </Link>
+
+            <div className={`w-full flex items-center px-8 ${isResidencial ? "hidden" : "block"}`}>
+            <button 
+    onClick={prevPlan} 
+    className={`left-5 z-10 bg-[#00AEEF] p-3 rounded-xl shadow-md hover:bg-[#038ABC] transition md:flex lg:hidden ${
+        currentIndex > 0 && planosPorPagina < 3 ? 'block' : 'hidden'
+    }`}
+>
+    <ChevronLeft size={40} />
+</button>
+
+
             </div>
-            
-            </div>
+            <div className="flex flex-col md:flex-row gap-4 md:gap-9 items-center">
+    <Link
+        href="#"
+        className="text-xl md:text-3xl mb-4 md:mb-8 h-[48px] md:h-[56px] min-w-[250px] flex items-center justify-center border-2 border-[#00AEEF] bg-[#00AEEF] rounded-full text-white px-4 md:px-5 hover:bg-[#34393F] font-bold transition-all duration-300">
+        Contratar Link Dedicado
+    </Link>
+    <Link
+        href="#"
+        className="text-xl md:text-3xl mb-4 md:mb-8 h-[48px] md:h-[56px] min-w-[250px] flex items-center justify-center border-2 border-[#34F80F] bg-[#34F80F] rounded-full text-white px-4 md:px-5 hover:bg-[#34393F] font-bold transition-all duration-300">
+        Personalizar Plano
+    </Link>
+</div>
+
+
+
+        </div>
     )
 }
