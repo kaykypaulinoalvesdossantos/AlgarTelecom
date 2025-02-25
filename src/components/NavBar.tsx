@@ -12,17 +12,17 @@ export default function NavBar() {
   const Links = [
     {
       name: 'Planos Para sua Casa',
-      link: '/planosparasuacasa',
+      link: '#planosparasuacasa',
     },
     {
       name: 'Planos Para sua Empresa',
-      link: '/planosparasuaempresa',
+      link: '#planosparasuaempresa',
     },
   ]
 
   return (
     <nav className="max-w-full shadow-nabBarShadow">
-      <div className="items-center justify-between bg-[#FBF8F5] px-7 py-4 md:flex md:px-10">
+      <div className="items-center justify-between bg-[#FBF8F5] px-7 py-4 md:flex  md:px-10">
         <Link
           href={'/'}
           className="flex cursor-pointer items-center text-base text-[#002D16] sm:text-sm 
@@ -62,7 +62,7 @@ export default function NavBar() {
             )}
           </div>
 
-          <div className='flex flex-row gap-4'>
+          <div className='flex flex-row max-md:flex-col gap-4'>
           {Links.map((link) => (
               <li key={link.name} className="text-base md:text-base text-center">
               <Link href={link.link} className="text-[#002D16] font-inter font-bold duration-500 text-center">
@@ -71,12 +71,12 @@ export default function NavBar() {
             </li>
           ))}
           </div>
-          <div className='flex flex-row gap-3'>
+          <div className='flex max-md:flex-col flex-row gap-3'>
             <Link href='https://api.whatsapp.com/send?phone=5511973047641' className='text-base text-white bg-[#1EFF00] py-2 px-4 flex rounded-full items-center gap-2'>
             <Image src={Whats} className="w-7 fill-white " alt="Whatsapp" />
               Whatsapp
             </Link>
-            <Link href='' className='text-base text-white bg-[#00AEEF] py-2 px-4 flex rounded-full items-center gap-2'>
+            <Link href='tel:+5511973047641' className='text-base text-white bg-[#00AEEF] py-2 px-4 flex rounded-full items-center gap-2'>
             <Image src={Tell} className="w-7 fill-white " alt="Whatsapp" />
             Me ligue ja
             </Link>

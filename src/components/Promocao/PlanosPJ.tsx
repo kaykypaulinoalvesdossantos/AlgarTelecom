@@ -183,23 +183,23 @@ export default function PlanosPj(){
     ];
 
     return(
-        <div className="flex flex-col items-center justify-between text-[#002D16] gap-12 w-full bg-[#34393F]">
+        <div id="planosparasuaempresa" className="flex flex-col items-center justify-between text-[#002D16] gap-12 w-full bg-[#34393F]">
             <h1 className="text-4xl font-bold text-center max-md:text-3xl max-sm:text-2xl text-white pt-[130px]">CONHEÇA NOSSOS PLANOS PARA SUA EMPRESA!</h1>
 
-            <div className={`w-full flex items-center px-8 ${isResidencial ? "block" : "hidden"}`}>
+            <div className={`w-full flex items-center px-8 max-md:px-0 ${isResidencial ? "block" : "hidden"}`}>
             <button 
     onClick={prevPlan} 
-    className={`left-5 z-10 bg-[#00AEEF] p-3 rounded-xl shadow-md hover:bg-[#038ABC] transition md:flex ${
+    className={`left-5 z-10 bg-[#00AEEF] p-3 max-md:p-0 rounded-xl shadow-md hover:bg-[#038ABC] transition md:flex ${
         currentIndex > 0 && planosPorPagina < 3 ? 'block' : 'hidden'
     }`}
 >
     <ChevronLeft size={40} />
 </button>
 
-                <div className="flex w-full gap-6 items-center justify-center">
+                <div className="flex w-full gap-6 items-center justify-center ">
                     {promocao.slice(currentIndex, currentIndex + planosPorPagina).map((plano, index) => (
                         <div key={index} 
-                            className="bg-white p-7 rounded-3xl flex flex-col gap-7 shadow-md 
+                            className="bg-white p-7 max-sm:p-3 rounded-3xl flex flex-col gap-7 shadow-md 
                             transition-all duration-300 flex-grow max-w-[350px] w-full"
                         >
                             <h2 className="text-4xl font-bold text-[#178000] mt-6">{plano.plano}</h2>
@@ -207,8 +207,8 @@ export default function PlanosPj(){
                             <div className="flex flex-col gap-2">
                             <div>
                                 <p className="text-[#002D16] text-xl font-bold ">Por apenas</p>
-                                <p className={`text-[#002D16] text-4xl font-bold ${wifiActive[index] ? "hidden" : "block"}`}>R${plano.valor24}<span className="text-2xl">/mês</span></p>
-                                <p className={`text-[#002D16] text-4xl font-bold ${wifiActive[index] ? "block" : "hidden"}`}>R${plano.valor36}<span className="text-2xl">/mês</span></p>
+                                <p className={`text-[#002D16] text-4xl font-bold max-sm:text-2xl ${wifiActive[index] ? "hidden" : "block"}`}>R${plano.valor24}<span className="text-2xl">/mês</span></p>
+                                <p className={`text-[#002D16] text-4xl font-bold max-sm:text-2xl ${wifiActive[index] ? "block" : "hidden"}`}>R${plano.valor36}<span className="text-2xl">/mês</span></p>
                             </div>
                             <div className="flex flex-row items-center gap-4">
                                 <button
@@ -237,8 +237,8 @@ export default function PlanosPj(){
                                 <li className="flex items-center gap-2"><Image src={check} alt={""}/>Suporte em 4 Horas</li>
                             </ul>
                             <Link
-                                href="#"
-                                className="text-3xl mb-8 h-[56px] min-w-[200px] flex items-center justify-center border-2 border-[#34F80F] rounded-full text-center bg-white text-[#002D16] hover:bg-[#34F80F] hover:text-white hover:font-bold transition-all duration-300">
+                                href="https://api.whatsapp.com/send?phone=5511973047641"
+                                className="text-3xl max-sm:text-xl mb-8 h-[56px] min-w-[200px] flex items-center justify-center border-2 border-[#34F80F] rounded-full text-center bg-white text-[#002D16] hover:bg-[#34F80F] hover:text-white hover:font-bold transition-all duration-300">
                                 Contratar Plano
                             </Link>
                         </div>
@@ -247,7 +247,7 @@ export default function PlanosPj(){
 
                 <button 
     onClick={nextPlan} 
-    className={`right-5 z-10 bg-[#00AEEF] p-3 rounded-xl shadow-md hover:bg-[#038ABC] transition md:flex ${
+    className={`right-5 z-10 bg-[#00AEEF] p-3 rounded-xl max-md:p-0 shadow-md hover:bg-[#038ABC] transition md:flex ${
         currentIndex + planosPorPagina < promocao.length && planosPorPagina < 3 ? 'block' : 'hidden'
     }`}
 >
@@ -259,7 +259,7 @@ export default function PlanosPj(){
             <div className={`w-full flex items-center px-8 ${isResidencial ? "hidden" : "block"}`}>
             <button 
     onClick={prevPlan} 
-    className={`left-5 z-10 bg-[#00AEEF] p-3 rounded-xl shadow-md hover:bg-[#038ABC] transition md:flex lg:hidden ${
+    className={`left-5 z-10 bg-[#00AEEF] p-3 rounded-xl max-md:p-0 shadow-md hover:bg-[#038ABC] transition md:flex lg:hidden ${
         currentIndex > 0 && planosPorPagina < 3 ? 'block' : 'hidden'
     }`}
 >
@@ -270,12 +270,12 @@ export default function PlanosPj(){
             </div>
             <div className="flex flex-col md:flex-row gap-4 md:gap-9 items-center">
     <Link
-        href="#"
+        href="https://api.whatsapp.com/send?phone=5511973047641"
         className="text-xl md:text-3xl mb-4 md:mb-8 h-[48px] md:h-[56px] min-w-[250px] flex items-center justify-center border-2 border-[#00AEEF] bg-[#00AEEF] rounded-full text-white px-4 md:px-5 hover:bg-[#34393F] font-bold transition-all duration-300">
         Contratar Link Dedicado
     </Link>
     <Link
-        href="#"
+        href="https://api.whatsapp.com/send?phone=5511973047641"
         className="text-xl md:text-3xl mb-4 md:mb-8 h-[48px] md:h-[56px] min-w-[250px] flex items-center justify-center border-2 border-[#34F80F] bg-[#34F80F] rounded-full text-white px-4 md:px-5 hover:bg-[#34393F] font-bold transition-all duration-300">
         Personalizar Plano
     </Link>

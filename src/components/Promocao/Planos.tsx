@@ -126,7 +126,7 @@ export default function Planos(){
     ]
 
     return(
-        <div className="flex flex-col items-center justify-between text-[#002D16] gap-12 w-full">
+        <div id="planosparasuacasa" className="flex flex-col items-center justify-between text-[#002D16] gap-12 w-full">
             <h1 className="text-4xl font-bold text-center max-md:text-3xl max-sm:text-2xl">CONHEÇA TODAS AS NOSSAS OFERTAS!</h1>
             <div>
                 <div className="bg-gray-300 rounded-full flex items-center cursor-pointer gap-9">
@@ -141,10 +141,10 @@ export default function Planos(){
                 </div>
             </div>
 
-            <div className={`w-full flex items-center px-8 ${isResidencial ? "block" : "hidden"}`}>
+            <div className={`w-full flex items-center px-8 max-md:px-0  ${isResidencial ? "block" : "hidden"}`}>
             <button 
     onClick={prevPlan} 
-    className={`left-5 z-10 bg-[#00AEEF] p-3 rounded-xl shadow-md hover:bg-[#038ABC] transition md:flex ${
+    className={`left-5 z-10 bg-[#00AEEF] p-3 max-md:p-0  rounded-xl shadow-md hover:bg-[#038ABC] transition md:flex ${
         currentIndex > 0 && planosPorPagina < 3 ? 'block' : 'hidden'
     }`}
 >
@@ -160,8 +160,8 @@ export default function Planos(){
                             <h2 className="text-4xl font-bold text-[#178000] mt-6">{plano.plano}</h2>
                             <div>
                                 <p className="text-[#002D16] text-xl font-bold ">Por apenas</p>
-                                <p className={`text-[#002D16] text-4xl font-bold ${wifiActive[index] ? "hidden" : "block"}`}>R${plano.valor}<span className="text-2xl">/mês</span></p>
-                                <p className={`text-[#002D16] text-4xl font-bold ${wifiActive[index] ? "block" : "hidden"}`}>R${plano.valorsuper}<span className="text-2xl">/mês</span></p>
+                                <p className={`text-[#002D16] text-4xl  max-sm:text-2xl font-bold ${wifiActive[index] ? "hidden" : "block"}`}>R${plano.valor}<span className="text-2xl">/mês</span></p>
+                                <p className={`text-[#002D16] text-4xl  max-sm:text-2xl font-bold ${wifiActive[index] ? "block" : "hidden"}`}>R${plano.valorsuper}<span className="text-2xl">/mês</span></p>
                             </div>
                             <div className="flex flex-row items-center gap-4">
                                 <button
@@ -192,8 +192,8 @@ export default function Planos(){
                                 <li className="flex items-center gap-2"><Image src={check} alt={""}/>Até {plano.up} de Upload</li>
                             </ul>
                             <Link
-                                href="#"
-                                className="text-3xl mb-8 h-[56px] min-w-[200px] flex items-center justify-center border-2 border-[#34F80F] rounded-full text-center bg-white text-[#002D16] hover:bg-[#34F80F] hover:text-white hover:font-bold transition-all duration-300">
+                                href="https://api.whatsapp.com/send?phone=5511973047641"
+                                className=" max-sm:text-xl text-3xl mb-8 h-[56px] min-w-[200px] flex items-center justify-center border-2 border-[#34F80F] rounded-full text-center bg-white text-[#002D16] hover:bg-[#34F80F] hover:text-white hover:font-bold transition-all duration-300">
                                 Contratar Plano
                             </Link>
                         </div>
@@ -202,7 +202,7 @@ export default function Planos(){
 
                 <button 
     onClick={nextPlan} 
-    className={`right-5 z-10 bg-[#00AEEF] p-3 rounded-xl shadow-md hover:bg-[#038ABC] transition md:flex ${
+    className={`right-5 z-10 bg-[#00AEEF] max-md:p-0 p-3 rounded-xl shadow-md hover:bg-[#038ABC] transition md:flex ${
         currentIndex + planosPorPagina < promocao.length && planosPorPagina < 3 ? 'block' : 'hidden'
     }`}
 >
@@ -211,10 +211,10 @@ export default function Planos(){
 
             </div>
 
-            <div className={`w-full flex items-center px-8 ${isResidencial ? "hidden" : "block"}`}>
+            <div className={`w-full flex items-center px-8 max-md:px-0 ${isResidencial ? "hidden" : "block"}`}>
             <button 
     onClick={prevPlan} 
-    className={`left-5 z-10 bg-[#00AEEF] p-3 rounded-xl shadow-md hover:bg-[#038ABC] transition md:flex lg:hidden ${
+    className={`left-5 z-10 bg-[#00AEEF] max-md:p-0 p-3 rounded-xl shadow-md hover:bg-[#038ABC] transition md:flex lg:hidden ${
         currentIndex > 0 && planosPorPagina < 3 ? 'block' : 'hidden'
     }`}
 >
@@ -223,7 +223,7 @@ export default function Planos(){
 
 
                 {/* Contêiner dos planos */}
-                <div className="flex w-full gap-6 items-center justify-center overflow-hidden">
+                <div className="flex w-full gap-6 items-center justify-center">
                     {promocaomovel.slice(currentIndex, currentIndex + planosPorPagina).map((plano, index) => (
                         <div key={index} className="bg-white p-7 rounded-3xl flex flex-col gap-7 shadow-md 
                             transition-all duration-300 flex-grow max-w-[350px] w-full">
@@ -231,7 +231,7 @@ export default function Planos(){
                         <div className="flex flex-col gap-5">
                             <div>
                                 <p className="text-[#002D16] text-xl font-bold">Por apenas</p>
-                                <p className={"text-[#002D16] text-4xl font-bold"}>R${plano.valor}<span className="text-2xl">/mês</span></p>
+                                <p className={"text-[#002D16] text-4xl  max-sm:text-2xl font-bold"}>R${plano.valor}<span className="text-2xl">/mês</span></p>
                             </div>
                         </div>
                         
@@ -246,8 +246,8 @@ export default function Planos(){
                             </ul>
                         </div>
                             <Link
-                                href="#"
-                                className="text-3xl mb-8 h-[56px] min-w-[200px] flex items-center justify-center border-2 border-[#34F80F] rounded-full text-center bg-white text-[#002D16] hover:bg-[#34F80F] hover:text-white hover:font-bold transition-all duration-300">
+                                href="https://api.whatsapp.com/send?phone=5511973047641"
+                                className=" max-sm:text-xl text-3xl mb-8 h-[56px] min-w-[200px] flex items-center justify-center border-2 border-[#34F80F] rounded-full text-center bg-white text-[#002D16] hover:bg-[#34F80F] hover:text-white hover:font-bold transition-all duration-300">
                                 Contratar Plano
                             </Link>
                         </div>
@@ -255,7 +255,7 @@ export default function Planos(){
                 </div>
                 <button 
     onClick={nextPlan} 
-    className={`right-5 z-10 bg-[#00AEEF] p-3 rounded-xl shadow-md hover:bg-[#038ABC] transition md:flex lg:hidden ${
+    className={`right-5 z-10 bg-[#00AEEF] p-3 max-md:p-0 rounded-xl shadow-md hover:bg-[#038ABC] transition md:flex lg:hidden ${
         currentIndex + planosPorPagina < promocaomovel.length && planosPorPagina < 3 ? 'block' : 'hidden'
     }`}
 >
