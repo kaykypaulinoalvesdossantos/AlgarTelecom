@@ -199,16 +199,17 @@ export default function PlanosPj(){
                 <div className="flex w-full gap-6 items-center justify-center ">
                     {promocao.slice(currentIndex, currentIndex + planosPorPagina).map((plano, index) => (
                         <div key={index} 
-                            className="bg-white p-7 max-sm:p-3 rounded-3xl flex flex-col gap-7 shadow-md 
+                            className="bg-white p-7 max-sm:p-3 rounded-3xl flex flex-col gap-5 shadow-md 
                             transition-all duration-300 flex-grow max-w-[350px] w-full"
                         >
-                            <h2 className="text-4xl font-bold text-[#178000] mt-6">{plano.plano}</h2>
+                            <h2 className="text-4xl font-bold text-[#006EE6] text-center uppercase mt-6">Link Dedicado</h2>
+                            <h2 className="text-4xl font-bold text-[#178000] ">{plano.plano}</h2>
                             <p className="text-[#002D16] text-xl font-bold ">{plano.canais}</p>
                             <div className="flex flex-col gap-2">
                             <div>
                                 <p className="text-[#002D16] text-xl font-bold ">Por apenas</p>
-                                <p className={`text-[#002D16] text-4xl font-bold max-sm:text-2xl ${wifiActive[index] ? "hidden" : "block"}`}>R${plano.valor24}<span className="text-2xl">/mês</span></p>
-                                <p className={`text-[#002D16] text-4xl font-bold max-sm:text-2xl ${wifiActive[index] ? "block" : "hidden"}`}>R${plano.valor36}<span className="text-2xl">/mês</span></p>
+                                <p className={`text-[#002D16] text-4xl font-bold max-sm:text-2xl ${wifiActive[index] ? "hidden" : "block"}`}>R${plano.valor36}<span className="text-2xl">/mês</span></p>
+                                <p className={`text-[#002D16] text-4xl font-bold max-sm:text-2xl ${wifiActive[index] ? "block" : "hidden"}`}>R${plano.valor24}<span className="text-2xl">/mês</span></p>
                             </div>
                             <div className="flex flex-row items-center gap-4">
                                 <button
@@ -223,16 +224,15 @@ export default function PlanosPj(){
                                     }`}
                                 />
                             </button>
-                            <p className={`text-[#002D16] text-xl font-bold ${wifiActive[index] ? "hidden" : "block"}`}>24 Meses</p>
-                            <p className={`text-[#002D16] text-xl font-bold ${wifiActive[index] ? "block" : "hidden"}`}>36 Meses</p>
+                            <p className={`text-[#002D16] text-xl font-bold ${wifiActive[index] ? "hidden" : "block"}`}>36 Meses</p>
+                            <p className={`text-[#002D16] text-xl font-bold ${wifiActive[index] ? "block" : "hidden"}`}>24 Meses</p>
                             </div>
                             </div>
                         <span className="min-h-[2px] bg-[#002D16] min-w-full block"></span>
 
                             <ul className="text-[#002D16] text-base flex flex-col gap-3">
-                                <li className="flex items-center gap-2"><Image src={check} alt={""}/>Wi-Fi Grátis</li>
                                 <li className="flex items-center gap-2"><Image src={check} alt={""}/>Upload 100% </li>
-                                <li className="flex items-center gap-2"><Image src={check} alt={""}/>Download</li>
+                                <li className="flex items-center gap-2"><Image src={check} alt={""}/>Download 100%</li>
                                 <li className="flex items-center gap-2"><Image src={check} alt={""}/>IP Exclusivo</li>
                                 <li className="flex items-center gap-2"><Image src={check} alt={""}/>Suporte em 4 Horas</li>
                             </ul>

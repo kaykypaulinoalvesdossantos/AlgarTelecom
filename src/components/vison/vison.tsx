@@ -68,7 +68,7 @@ export default function Vison() {
 
                 {/* Conteúdo de texto */}
                 <div className="text-[#002d16] flex flex-col items-start justify-start gap-8 md:gap-28">
-                    <h2 className="font-bold text-3xl md:text-6xl leading-tight">
+                    <h2 className="font-bold text-3xl md:text-4xl leading-tight">
                         De norte ao sul, <br /> de leste a oeste, <br /> a Algar Telecom está em <br /> todo o Brasil
                     </h2>
 
