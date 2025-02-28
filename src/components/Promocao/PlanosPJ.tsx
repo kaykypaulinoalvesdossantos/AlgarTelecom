@@ -280,9 +280,6 @@ export default function PlanosPj(){
         Personalizar Plano
     </Link>
 </div>
-
-
-
         </div>
     )
 }
