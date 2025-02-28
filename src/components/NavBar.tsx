@@ -72,7 +72,7 @@ export default function NavBar() {
           ))}
           </div>
           <div className='flex max-md:flex-col flex-row gap-3'>
-            <Link href='https://api.whatsapp.com/send?phone=5511973047641' className='text-base text-white bg-[#1EFF00] py-2 px-4 flex rounded-full items-center gap-2'>
+            <Link href='https://api.whatsapp.com/send?phone=551123629665'  className='text-base text-white bg-[#1EFF00] py-2 px-4 flex rounded-full items-center gap-2'>
             <Image src={Whats} className="w-7 fill-white " alt="Whatsapp" />
               Whatsapp
             </Link>

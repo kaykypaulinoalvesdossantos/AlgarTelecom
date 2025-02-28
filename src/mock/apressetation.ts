@@ -1,12 +1,12 @@
-import slide1Desktop from '@/../public/image/PC/1.png'
-import slide1Tablet from '@/../public/image/Tablet/1.png'
-import slide1Mobile from '@/../public/image/Celular/1.png'
-import slide2Desktop from '@/../public/image/PC/2.png'
-import slide2Tablet from '@/../public/image/Tablet/2.png'
-import slide2Mobile from '@/../public/image/Celular/2.png'
-import slide3Desktop from '@/../public/image/PC/3.png'
-import slide3Tablet from '@/../public/image/Tablet/3.png'
-import slide3Mobile from '@/../public/image/Celular/3.png'
+import slide1Desktop from '@/../public/image/PC/1.jpg'
+import slide1Tablet from '@/../public/image/Tablet/1.jpg'
+import slide1Mobile from '@/../public/image/Celular/1.jpg'
+import slide2Desktop from '@/../public/image/PC/2.svg'
+import slide2Tablet from '@/../public/image/Tablet/2.svg'
+import slide2Mobile from '@/../public/image/Celular/2.svg'
+import slide3Desktop from '@/../public/image/PC/3.svg'
+import slide3Tablet from '@/../public/image/Tablet/3.svg'
+import slide3Mobile from '@/../public/image/Celular/3.svg'
 
 
 

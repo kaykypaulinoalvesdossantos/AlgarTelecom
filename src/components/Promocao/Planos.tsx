@@ -42,6 +42,7 @@ export default function Planos(){
         return () => {
             window.removeEventListener("resize", handleResize);
         };
+
     }, [isResidencial]);
     
 
@@ -131,11 +132,16 @@ export default function Planos(){
             <div>
                 <div className="bg-gray-300 rounded-full flex items-center cursor-pointer gap-9">
                     <div className={`py-4 px-3 ${isResidencial ? "bg-white rounded-full m-1" : "bg-gray-300 rounded-full m-1"}`}
-                        onClick={() => setIsResidencial(true)}>
+                        onClick={() => {setIsResidencial(true) 
+                        setCurrentIndex(0);} }>
                         <span className="font-bold text-2xl max-md:text-xl ">Internet Residencial</span>
                     </div>
-                    <div className={`py-4 px-3 ${isResidencial ? "bg-gray-300 rounded-full m-1" : "bg-white rounded-full m-1"}`}
-                        onClick={() => setIsResidencial(false)}>
+                    <div 
+    className={`py-4 px-3 ${isResidencial ? "bg-gray-300 rounded-full m-1" : "bg-white rounded-full m-1"}`}
+    onClick={() => {
+        setIsResidencial(false);
+        setCurrentIndex(0);
+    }}>
                         <span className="font-bold text-2xl max-md:text-xl">Plano Móvel</span>
                     </div>
                 </div>
@@ -179,6 +185,7 @@ export default function Planos(){
                                 <p className="font-bold text-xl">Super Wi-fi</p>
                             </div>
                         <span className="min-h-[2px] bg-[#002D16] min-w-full block"></span>
+                        <p className="text-[#002D16] text-xl">Serviços inclusos :</p>
 
                             <ul className="text-[#002D16] text-base flex flex-col gap-3">
                             <li className={`flex items-center gap-2 
@@ -192,7 +199,7 @@ export default function Planos(){
                                 <li className="flex items-center gap-2"><Image src={check} alt={""}/>Até {plano.up} de Upload</li>
                             </ul>
                             <Link
-                                href="https://api.whatsapp.com/send?phone=5511973047641"
+                                href='https://api.whatsapp.com/send?phone=551123629665' 
                                 className=" max-sm:text-xl text-3xl mb-8 h-[56px] min-w-[200px] flex items-center justify-center border-2 border-[#34F80F] rounded-full text-center bg-white text-[#002D16] hover:bg-[#34F80F] hover:text-white hover:font-bold transition-all duration-300">
                                 Contratar Plano
                             </Link>
@@ -246,7 +253,7 @@ export default function Planos(){
                             </ul>
                         </div>
                             <Link
-                                href="https://api.whatsapp.com/send?phone=5511973047641"
+                                href='https://api.whatsapp.com/send?phone=551123629665' 
                                 className=" max-sm:text-xl text-3xl mb-8 h-[56px] min-w-[200px] flex items-center justify-center border-2 border-[#34F80F] rounded-full text-center bg-white text-[#002D16] hover:bg-[#34F80F] hover:text-white hover:font-bold transition-all duration-300">
                                 Contratar Plano
                             </Link>

@@ -51,6 +51,7 @@ export default function Displayhome() {
               alt="" 
               layout="responsive" 
               objectFit="cover"
+              quality={100}
             />             
           </SwiperSlide>
         ))}

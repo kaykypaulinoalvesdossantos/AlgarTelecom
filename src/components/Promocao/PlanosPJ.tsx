@@ -237,7 +237,7 @@ export default function PlanosPj(){
                                 <li className="flex items-center gap-2"><Image src={check} alt={""}/>Suporte em 4 Horas</li>
                             </ul>
                             <Link
-                                href="https://api.whatsapp.com/send?phone=5511973047641"
+                                href='https://api.whatsapp.com/send?phone=551123629665' 
                                 className="text-3xl max-sm:text-xl mb-8 h-[56px] min-w-[200px] flex items-center justify-center border-2 border-[#34F80F] rounded-full text-center bg-white text-[#002D16] hover:bg-[#34F80F] hover:text-white hover:font-bold transition-all duration-300">
                                 Contratar Plano
                             </Link>
@@ -270,12 +270,12 @@ export default function PlanosPj(){
             </div>
             <div className="flex flex-col md:flex-row gap-4 md:gap-9 items-center">
     <Link
-        href="https://api.whatsapp.com/send?phone=5511973047641"
+        href='https://api.whatsapp.com/send?phone=551123629665' 
         className="text-xl md:text-3xl mb-4 md:mb-8 h-[48px] md:h-[56px] min-w-[250px] flex items-center justify-center border-2 border-[#00AEEF] bg-[#00AEEF] rounded-full text-white px-4 md:px-5 hover:bg-[#34393F] font-bold transition-all duration-300">
         Contratar Link Dedicado
     </Link>
     <Link
-        href="https://api.whatsapp.com/send?phone=5511973047641"
+        href='https://api.whatsapp.com/send?phone=551123629665' 
         className="text-xl md:text-3xl mb-4 md:mb-8 h-[48px] md:h-[56px] min-w-[250px] flex items-center justify-center border-2 border-[#34F80F] bg-[#34F80F] rounded-full text-white px-4 md:px-5 hover:bg-[#34393F] font-bold transition-all duration-300">
         Personalizar Plano
     </Link>
