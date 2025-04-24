@@ -68,46 +68,47 @@ export default function Planos(){
     const promocao = [
         {
             plano : '300 Mega',
-            valor : '99,90',
-            valorsuper : '139,80',
+            valor : '89,90',
+            valorsuper : '124,90',
             up: '150 Megas',
         },
         {
             plano : '400 Mega',
-            valor : '109,90',
-            valorsuper : '149,80',
+            valor : '99,90',
+            valorsuper : '134,90',
             up: '200 Megas',
         },
         {
-            plano : '500 Mega',
-            valor : '119,90',
-            valorsuper : '159,80',
-            up: '250 Megas',
-        },
-        {
             plano : '600 Mega',
-            valor : '129,90',
-            valorsuper : '169,80',
+            valor : '109,90',
+            valorsuper : '144,90',
             up: '300 Megas',
         },
         {
-            plano : '700 Mega',
-            valor : '139,90',
-            valorsuper : '179,80',
-            up: '350 Megas',
-        },
-        {
-            plano : '800 Mega',
-            valor : '149,90',
-            valorsuper : '189,80',
-            up: '400 Megas',
-        },
-        {
             plano : '1 Gigas',
-            valor : '239,90',
-            valorsuper : '279,80',
+            valor : '149,90',
+            valorsuper : '184,90',
             up: '500 Megas',
         },
+        {
+            plano : '600 Mega  + 2 Super wi-fi + Globo Play',
+            valor : '159,90',
+            valorsuper : '159,90',
+            up: '300 Megas',
+        },
+        {
+            plano : '600 Mega  + 30 GB plano movel + Globo Play',
+            valor : '159,90',
+            valorsuper : '159,90',
+            up: '300 Megas',
+        },
+        {
+            plano : '1 Giga  + 2 Super wi-fi + 3 meses de EXA seguraça',
+            valor : '189,90',
+            valorsuper : '189,90',
+            up: '500 Megas',
+        },
+
     ];
 
     const promocaomovel = [
