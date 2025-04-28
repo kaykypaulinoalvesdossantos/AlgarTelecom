@@ -7,6 +7,7 @@ import Depoimentos from "@/components/depoimentos/depoimentos";
 import PlanosPJ from "@/components/Promocao/PlanosPJ";
 import Footer from "@/components/footer";
 import Displayhome from "@/components/dipslyhome/displayhome";
+import Link from "next/link";
 
 
 
@@ -15,7 +16,9 @@ export default function Home() {
     <div>
       <NavBar/>
       <div className="space-y-36">
-        <Displayhome/>
+        <Link href='https://api.whatsapp.com/send?phone=551123629665'>
+          <Displayhome/>
+        </Link>
         <Planos/>
         <Vison/>
          <div>
